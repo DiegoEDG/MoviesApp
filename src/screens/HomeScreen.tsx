@@ -1,10 +1,21 @@
 import React from 'react';
-import {ActivityIndicator, SafeAreaView, StyleSheet, View} from 'react-native';
-import {MoviePoster} from '../components';
+import {
+  ActivityIndicator,
+  Dimensions,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import {MovieList, MoviePoster} from '../components';
 import {useMoviesFetch} from '../hooks';
+import {Text} from 'react-native';
+
+const {width} = Dimensions.get('window');
 
 const HomeScreen = () => {
-  const {moviesNowPlaying, isLoading} = useMoviesFetch();
+  const {nowPlaying, popular, topRated, upcoming, isLoading} = useMoviesFetch();
 
   if (isLoading) {
     return (
@@ -17,11 +28,27 @@ const HomeScreen = () => {
   } else {
     return (
       <SafeAreaView>
-        <MoviePoster imagePath={moviesNowPlaying[2]?.poster_path} />
+        <ScrollView>
+          <View style={{height: 470}}>
+            <Text style={styles.title}>Playing Now</Text>
+            <Carousel
+              data={nowPlaying}
+              renderItem={({item}) => (
+                <MoviePoster imagePath={item.poster_path} />
+              )}
+              sliderWidth={width}
+              itemWidth={300}
+            />
+          </View>
+          <MovieList data={popular} title="Popular" />
+          <MovieList data={topRated} title="Top Rated" />
+          <MovieList data={upcoming} title="Upcoming" />
+        </ScrollView>
       </SafeAreaView>
     );
   }
 };
+
 export const styles = StyleSheet.create({
   loader: {
     display: 'flex',
@@ -29,6 +56,12 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     width: '100%',
     height: '100%',
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 30,
+    marginLeft: 10,
+    alignSelf: 'center',
   },
 });
 

@@ -1,35 +1,30 @@
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 interface Props {
   imagePath: string;
+  width?: number;
+  height?: number;
 }
 
-const MoviePoster = ({imagePath}: Props) => {
+const MoviePoster = ({imagePath, width = 270, height = 400}: Props) => {
   const posterURL = `https://image.tmdb.org/t/p/w500/${imagePath}`;
 
   return (
-    <View style={styles.movieContainer}>
+    <View
+      style={{
+        width,
+        height,
+        alignSelf: 'center',
+        marginTop: 5,
+        borderRadius: 20,
+        marginHorizontal: 7,
+      }}>
       <Image source={{uri: posterURL}} style={styles.image} />
     </View>
   );
 };
 
 export const styles = StyleSheet.create({
-  movieContainer: {
-    width: 270,
-    height: 400,
-    alignSelf: 'center',
-    marginTop: 15,
-    borderRadius: 20,
-    shadowColor: '#ffffff',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.19,
-    shadowRadius: 5.62,
-    elevation: 6,
-  },
   image: {
     width: '100%',
     height: '100%',
