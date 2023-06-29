@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   ActivityIndicator,
   Dimensions,
@@ -6,11 +5,11 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  Text,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {MovieList, MoviePoster} from '../components';
 import {useMoviesFetch} from '../hooks';
-import {Text} from 'react-native';
 
 const {width} = Dimensions.get('window');
 
@@ -31,14 +30,14 @@ const HomeScreen = () => {
         <ScrollView>
           <View style={{height: 470}}>
             <Text style={styles.title}>Playing Now</Text>
-            <Carousel
-              data={nowPlaying}
-              renderItem={({item}) => (
-                <MoviePoster imagePath={item.poster_path} />
-              )}
-              sliderWidth={width}
-              itemWidth={300}
-            />
+            <View>
+              <Carousel
+                data={nowPlaying}
+                renderItem={({item}) => <MoviePoster movie={item} />}
+                sliderWidth={width}
+                itemWidth={300}
+              />
+            </View>
           </View>
           <MovieList data={popular} title="Popular" />
           <MovieList data={topRated} title="Top Rated" />

@@ -1,5 +1,6 @@
-import {FlatList, Text, View} from 'react-native';
-import {Movie} from '../interfaces/movies';
+import {Pressable} from 'react-native';
+import {FlatList, Text} from 'react-native';
+import {Movie} from '../interfaces';
 import MoviePoster from './MoviePoster';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const MovieList = ({data, title}: Props) => {
   return (
-    <View style={{height: 260}}>
+    <Pressable style={{height: 260}}>
       <Text style={{color: '#FFFFFF', fontSize: 30, marginLeft: 10}}>
         {title}
       </Text>
@@ -17,16 +18,12 @@ const MovieList = ({data, title}: Props) => {
         data={data}
         keyExtractor={item => item.id.toString()}
         renderItem={item => (
-          <MoviePoster
-            imagePath={item.item.poster_path}
-            width={140}
-            height={200}
-          />
+          <MoviePoster movie={item.item} width={140} height={200} />
         )}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       />
-    </View>
+    </Pressable>
   );
 };
 
