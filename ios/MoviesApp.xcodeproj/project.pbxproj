@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MoviesAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MoviesAppTests.m */; };
+		0474A2B834ACCAAE434123D2 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5204043355C9A42B65527A /* ExpoModulesProvider.swift */; };
 		0C80B921A6F3F58F76C31292 /* libPods-MoviesApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MoviesApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-MoviesApp-MoviesAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MoviesApp-MoviesAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D82BDEE8853FCC076F1C32BF /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA736456FFF6F1D8549BA36A /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6D9EAD262A4DCBC000A232A0 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = Fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MoviesApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MoviesApp-MoviesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesApp-MoviesAppTests.release.xcconfig"; path = "Target Support Files/Pods-MoviesApp-MoviesAppTests/Pods-MoviesApp-MoviesAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB5204043355C9A42B65527A /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MoviesApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		CA736456FFF6F1D8549BA36A /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MoviesApp-MoviesAppTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -107,11 +111,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A2337CB5200DAB049BE5BE6 /* MoviesAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA736456FFF6F1D8549BA36A /* ExpoModulesProvider.swift */,
+			);
+			name = MoviesAppTests;
+			sourceTree = "<group>";
+		};
 		6D593ED52A4DC62B00C6EB09 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6E94EDDECA5193751E6C4788 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				897D76023318E3BB618473F5 /* MoviesApp */,
+				5A2337CB5200DAB049BE5BE6 /* MoviesAppTests */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -132,6 +153,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				6E94EDDECA5193751E6C4788 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,6 +167,14 @@
 				00E356EE1AD99517003FC87E /* MoviesAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		897D76023318E3BB618473F5 /* MoviesApp */ = {
+			isa = PBXGroup;
+			children = (
+				BB5204043355C9A42B65527A /* ExpoModulesProvider.swift */,
+			);
+			name = MoviesApp;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -166,6 +196,7 @@
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MoviesAppTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				C73AFEE736BE6BDEE3BC5484 /* [Expo] Configure project */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -188,6 +219,7 @@
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
+				1F5BEAF1CBE09FE5B6D3E68D /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -294,6 +326,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoviesApp/Pods-MoviesApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1F5BEAF1CBE09FE5B6D3E68D /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-MoviesApp/expo-configure-project.sh\"\n";
+		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +405,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoviesApp-MoviesAppTests/Pods-MoviesApp-MoviesAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C73AFEE736BE6BDEE3BC5484 /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-MoviesApp-MoviesAppTests/expo-configure-project.sh\"\n";
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -416,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* MoviesAppTests.m in Sources */,
+				D82BDEE8853FCC076F1C32BF /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +496,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				0474A2B834ACCAAE434123D2 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +522,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MoviesAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +533,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoviesApp.app/MoviesApp";
@@ -475,7 +548,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MoviesAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +559,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoviesApp.app/MoviesApp";
@@ -514,6 +588,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MoviesApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -544,6 +619,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MoviesApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -601,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -667,7 +743,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

@@ -11,7 +11,7 @@ interface Props {
 const MovieList = ({data, title}: Props) => {
   return (
     <Pressable style={{height: 260}}>
-      <Text style={{color: '#FFFFFF', fontSize: 30, marginLeft: 10}}>
+      <Text style={{fontSize: 30, marginLeft: 10, fontWeight: 'bold'}}>
         {title}
       </Text>
       <FlatList

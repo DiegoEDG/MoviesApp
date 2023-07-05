@@ -3,12 +3,15 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {StackNavigation} from './src/navigation';
+import {GradientProvider} from './src/context';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StackNavigation />
-    </NavigationContainer>
+    <GradientProvider>
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
+    </GradientProvider>
   );
 };
 

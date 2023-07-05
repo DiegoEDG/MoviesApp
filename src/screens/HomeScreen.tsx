@@ -1,3 +1,4 @@
+import {useContext, useState, useEffect} from 'react';
 import {
   ActivityIndicator,
   Dimensions,
@@ -7,14 +8,32 @@ import {
   View,
   Text,
 } from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
-import {MovieList, MoviePoster} from '../components';
+import {GradientBackground, MovieList, MoviePoster} from '../components';
 import {useMoviesFetch} from '../hooks';
+import {getImageColors} from '../helpers';
+import {GradientContext} from '../context';
 
 const {width} = Dimensions.get('window');
 
 const HomeScreen = () => {
+  const {top} = useSafeAreaInsets();
+  const {setMainColors} = useContext(GradientContext);
   const {nowPlaying, popular, topRated, upcoming, isLoading} = useMoviesFetch();
+
+  const getUrl = async (idx: number) => {
+    const baseImageUrl = 'https://image.tmdb.org/t/p/w500/';
+    const posterUrl = `${baseImageUrl}${nowPlaying[idx].poster_path}`;
+    const [primary, secondary] = await getImageColors(posterUrl);
+    setMainColors({primary, secondary});
+  };
+
+  useEffect(() => {
+    if (nowPlaying.length > 0) {
+      getUrl(0);
+    }
+  }, [nowPlaying]);
 
   if (isLoading) {
     return (
@@ -26,8 +45,8 @@ const HomeScreen = () => {
     );
   } else {
     return (
-      <SafeAreaView>
-        <ScrollView>
+      <GradientBackground>
+        <ScrollView style={{marginTop: top}}>
           <View style={{height: 470}}>
             <Text style={styles.title}>Playing Now</Text>
             <View>
@@ -36,6 +55,7 @@ const HomeScreen = () => {
                 renderItem={({item}) => <MoviePoster movie={item} />}
                 sliderWidth={width}
                 itemWidth={300}
+                onSnapToItem={idx => getUrl(idx)}
               />
             </View>
           </View>
@@ -43,7 +63,7 @@ const HomeScreen = () => {
           <MovieList data={topRated} title="Top Rated" />
           <MovieList data={upcoming} title="Upcoming" />
         </ScrollView>
-      </SafeAreaView>
+      </GradientBackground>
     );
   }
 };
@@ -57,10 +77,10 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    color: '#FFFFFF',
     fontSize: 30,
     marginLeft: 10,
     alignSelf: 'center',
+    fontWeight: 'bold',
   },
 });
 
