@@ -9,8 +9,3 @@
 <p align="center">
   <img src='./assets/Sample.png' width="300"/>
 </p>
-
-
-<style>
-
-</style>
