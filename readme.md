@@ -1,12 +1,10 @@
 <h1 align="center">Movies App 🍿</h1>
-<h2>Overview 📘</h2>
-<p>Movies app that shows different movies based on categories like Playing now, Popular, Top Rated, Upcoming. The data is fethching from the MovieDB api.</p
 
-<p align="center">
-  <img src='./assets/Sample.png' width="200"/>
-  <img src='./assets/detail.png' width="200"/>
-  <img src='./assets/info.png' width="200"/>
-</p>
+## Overview 📘
+Movies app that shows different movies based on categories like Playing now, Popular, Top Rated, Upcoming. The data is fethching from the MovieDB api.
+
+## Scrennshots 📷
+<img src='./assets/Sample.png' width="200"/> <img src='./assets/detail.png' width="200"/> <img src='./assets/info.png' width="200"/>
 
 ## Features 🕹️
 - See the movies categorized
@@ -17,10 +15,10 @@
 * React Native CLI
 * Typescript
 
-* ## How to use ⚙️
+## How to use ⚙️
 - Run the following commands after cloning the project
 ```
-npm install
+yarn install
 npx pod-install ios
 ```
 - The next step is run the following command to run the app on your terminal
