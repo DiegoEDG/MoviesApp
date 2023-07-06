@@ -10,9 +10,9 @@
 <p align="center"> Movies app that shows different movies based on categories like Playing now, Popular, Top Rated, Upcoming </p>
 
 <p align="center">
-  <img src='./assets/Sample.png' width="300"/>
-  <img src='./assets/detail.png' width="300"/>
-  <img src='./assets/info.png' width="300"/>
+  <img src='./assets/Sample.png' width="200"/>
+  <img src='./assets/detail.png' width="200"/>
+  <img src='./assets/info.png' width="200"/>
 </p>
 
 ## Technologies 💻
